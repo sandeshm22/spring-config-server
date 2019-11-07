@@ -1,0 +1,23 @@
+/*C3*/SET SCHEMA PUBLIC
+drop table if exists properties CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table properties (id integer not null, application varchar(255), key varchar(255), label varchar(255), profile varchar(255), val varchar(255), primary key (id))
+INSERT INTO PROPERTIES VALUES(1,'app2','com.sybase.url',NULL,'dev','2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
+INSERT INTO PROPERTIES VALUES(2,'app2','com.sybase.url','1.1','dev','2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 3
+COMMIT
+INSERT INTO PROPERTIES VALUES(3,'app2','com.sybase.url','1.1','prod','2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+INSERT INTO PROPERTIES VALUES(4,'app2','com.sybase.url','11','prod','2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 5
+COMMIT
+INSERT INTO PROPERTIES VALUES(5,'app2','com.sybase.url','11','prod','2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 6
+COMMIT
+INSERT INTO PROPERTIES VALUES(6,'app2','com.sybase.url','11','prod','21')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
+COMMIT
